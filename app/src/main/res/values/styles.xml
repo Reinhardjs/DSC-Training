@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="TextViewStyle" parent="@android:style/Widget.TextView">
         <item name="android:textColor">@android:color/white</item>
@@ -17,8 +17,10 @@
         <item name="colorPrimary">@color/colorPrimary2</item>
         <item name="android:colorPrimaryDark">@color/colorPrimaryDark2</item>
         <item name="android:colorAccent">@color/colorAccent</item>
-    </style>
 
+        <!-- untuk mengganti warna icon di toolbar menjadi putih, seperti searchview -->
+        <item name="android:textColorSecondary">@android:color/white</item>
+    </style>
 
     <style name="MyCardViewStyle" parent="Theme.AppCompat.Light">
         <item name="cardCornerRadius">3dp</item>
@@ -28,6 +30,22 @@
         <item name="contentPaddingLeft">0dp</item>
         <item name="contentPaddingRight">0dp</item>
         <item name="cardBackgroundColor">#FFFFFF</item>
+    </style>
+
+    <style name="MyCardViewStyle2" parent="Theme.AppCompat.Light">
+        <item name="cardCornerRadius">0dp</item>
+        <item name="cardElevation">1dp</item>
+        <item name="contentPaddingBottom">10dp</item>
+        <item name="contentPaddingTop">10dp</item>
+        <item name="contentPaddingLeft">25dp</item>
+        <item name="contentPaddingRight">10dp</item>
+        <item name="cardBackgroundColor">#cca1adc4</item>
+    </style>
+
+    <style name="TextAppearance.Toolbar.Title" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/century_gothic_bold</item>
     </style>
 
 </resources>

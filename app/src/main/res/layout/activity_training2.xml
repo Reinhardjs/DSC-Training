@@ -5,67 +5,123 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#8c9ab6"
     tools:context=".Training2.Training2Activity">
 
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="10">
 
         <LinearLayout
+            android:id="@+id/thisTempContainer"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:background="#000"
+            android:layout_height="match_parent"
+            android:paddingTop="80dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_weight="3.5"
             android:orientation="vertical">
 
-        </LinearLayout>
-
-        <ScrollView
-            android:id="@+id/scrollView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="?android:attr/actionBarSize">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sunny_rain"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:background="#FFF">
-                <TextView
-                    android:text="asdasd123123123123"
-                    android:textSize="20sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:weightSum="10">
 
-                <TextView
-                    android:text="asdasd123123123123"
-                    android:textSize="20sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:text="asdasd123123123123"
-                    android:textSize="20sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextViewStyle"
+                        android:textSize="28sp"
+                        android:text="Barcelona"/>
 
-                <TextView
-                    android:text="asdasd123123123123"
-                    android:textSize="20sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextViewStyle"
+                        android:textSize="18sp"
+                        android:text="Spain"/>
 
-                <TextView
-                    android:text="asdasd123123123123"
-                    android:textSize="20sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp" />
+                </LinearLayout>
 
-                <TextView
-                    android:text="asdasd123123123123"
-                    android:textSize="20sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextViewStyle"
+                        android:textSize="60sp"
+                        android:text="13\u00B0"/>
+
+                </LinearLayout>
+
             </LinearLayout>
 
-        </ScrollView>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/sayHelloTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:textAppearance="@style/TextViewStyle"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:text="Morning Sam"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/sayHelloTV"
+                    android:textAppearance="@style/TextViewStyle"
+                    android:textSize="14sp"
+                    android:text="Can we see a movie today?"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:textAppearance="@style/TextViewStyle"
+                    android:layout_alignParentBottom="true"
+                    android:textSize="14sp"
+                    android:text="Last searches"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/freespace"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="6.5"/>
+    </LinearLayout>
+
+    <com.reinhardjs.dsc_training.Training2.CustomRecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="?android:attr/actionBarSize"
+        android:nestedScrollingEnabled="false"/>
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
@@ -78,16 +134,26 @@
             android:layout_width="match_parent"
             android:layout_height="?android:attr/actionBarSize"
             android:background="@color/colorPrimary2"
-            android:elevation="4dp"
-            app:navigationIcon="@drawable/ic_arrow_back_white_24dp"
+            android:paddingRight="20dp"
+            app:titleMarginStart="20dp"
+            app:titleTextAppearance="@style/TextAppearance.Toolbar.Title"
+            app:title="WEADIFY"
             app:titleTextColor="@android:color/white">
+
+            <ImageView
+                android:id="@+id/setting_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:src="@drawable/setting_menu_icon"/>
+
             <android.support.v7.widget.SearchView
                 android:id="@+id/searchView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:iconifiedByDefault="false"
-                android:queryHint="Search"
-                android:layout_centerHorizontal="true"/>
+                android:layout_gravity="end"
+                android:queryHint="Search" />
         </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
