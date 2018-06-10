@@ -12,9 +12,16 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Training1.Training1Activity"
+            android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".Training2.Training2Activity"
+            android:theme="@style/AppTheme2"/>
     </application>
 
 </manifest>

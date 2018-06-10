@@ -1,17 +1,15 @@
 package com.reinhardjs.dsc_training;
 
 
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.ActionBar;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.transition.Slide;
-import android.view.Gravity;
+import android.view.View;
+import android.widget.Button;
 
-import com.reinhardjs.dsc_training.Fragments.FragmentDetail;
-import com.reinhardjs.dsc_training.Fragments.FragmentRV;
+import com.reinhardjs.dsc_training.Training1.Training1Activity;
+import com.reinhardjs.dsc_training.Training2.Training2Activity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,25 +21,23 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        ActionBar ab = getSupportActionBar();
-        ab.setDisplayHomeAsUpEnabled(true);
+        Button training1Btn = findViewById(R.id.train1Btn);
+        Button training2Btn = findViewById(R.id.train2Btn);
 
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction;
+        training1Btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Training1Activity.class);
+                startActivity(intent);
+            }
+        });
 
-        fragmentTransaction = fragmentManager.beginTransaction();
-        FragmentRV fragment = new FragmentRV();
-        fragment.setExitTransition(new Slide(Gravity.LEFT));
-        fragment.setAllowEnterTransitionOverlap(false);
-        fragmentTransaction.add(R.id.fragment, fragment, "Fragment RV");
-        fragmentTransaction.commit();
-
-
-    }
-
-    @Override
-    public boolean onSupportNavigateUp(){
-        onBackPressed();
-        return true;
+        training2Btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Training2Activity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
